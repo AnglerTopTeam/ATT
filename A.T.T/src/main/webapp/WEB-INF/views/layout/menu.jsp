@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Content-Type" content="text/html">
 <link href="resources/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
 <link href="resources/font-awesome/css/font-awesome.css" rel="stylesheet" />
 <link href="resources/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
@@ -120,14 +121,13 @@
 
 <!-- Core Scripts - Include with every page -->
     
-    <script src="resources/plugins/bootstrap/bootstrap.min.js"></script>
+   	<script src="resources/plugins/bootstrap/bootstrap.min.js"></script>
     <script src="resources/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="resources/plugins/pace/pace.js"></script>
     <script src="resources/scripts/siminta.js"></script>
-    <!-- Page-Level Plugin Scripts-->
     <script src="resources/plugins/morris/raphael-2.1.0.min.js"></script>
     <script src="resources/plugins/morris/morris.js"></script>
     <script src="resources/scripts/dashboard-demo.js"></script>
-
+ 
 </body>
 </html>
