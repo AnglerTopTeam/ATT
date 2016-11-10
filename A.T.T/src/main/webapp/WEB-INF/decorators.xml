@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- default directory 설정 -->
+
+<decorators defaultdir="/WEB-INF/views">
+
+	<!-- sample -->
+
+	<decorator name="home" page="layout/layout.jsp">
+		<pattern>/</pattern>
+	</decorator>
+	<decorator name="header" page="layout/header.jsp"/>
+	<decorator name="menu" page="layout/menu.jsp"/>
+
+	<excludes>
+		<pattern>/excludes/*</pattern>
+	</excludes>
+
+</decorators>

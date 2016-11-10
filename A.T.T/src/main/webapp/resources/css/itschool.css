@@ -1,0 +1,25 @@
+.div-bgcolor-red{
+	background: #D9534F;
+}
+.div-bgcolor-green{
+	background: #00ff00;
+}
+.div-bgcolor-blue{
+	font-family:cursive;
+	background: #0000ff;
+	font-size: 50px
+}
+.div-bgcolor-white{
+	background: #ffffff;
+}
+.div-bgcolor-black{
+	background: #000000;
+}
+.div-bgcolor-gray{
+	background: #eeeeee;
+}
+
+.line-margin{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
