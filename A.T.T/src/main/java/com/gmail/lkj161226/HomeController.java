@@ -24,7 +24,7 @@ public class HomeController {
 	 */
 	
 	/**
-	 * 테스트용 저장kjkjhkjhkjkjbkjbkj
+	 * 중재형 짱짱맨
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
