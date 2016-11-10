@@ -24,7 +24,7 @@ public class HomeController {
 	 */
 	
 	/**
-	 * ¸íÈÆÀÌµµ Â¯Â¯¸Ç
+	 * ¸íÈÆÀÌµµ Â¯Â¯¸Ç!!!!!!!
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
