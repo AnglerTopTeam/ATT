@@ -16,8 +16,9 @@
 		<tr><td colspan="2" width="100%"><page:applyDecorator id="header" name="header"/>
 		</td></tr>
 		<tr>
-			<td width="30%"><page:applyDecorator id="menu" name="menu"/></td>
+			<td width="20%"><page:applyDecorator id="menu" name="menu"/></td>
 			<td width="70%"><decorator:body/></td>
+			<td width="10%"><page:applyDecorator id="rmenu" name="rmenu"/></td>
 		</tr>
 		<tr><td colspan="2" width="100%"><page:applyDecorator id="footer" name="footer"/>
 		</td></tr>

@@ -7,6 +7,7 @@
 	</decorator>
 	<decorator name="header" page="layout/header.jsp"/>
 	<decorator name="menu" page="layout/menu.jsp"/>
+	<decorator name="rmenu" page="layout/rmenu.jsp"/>
 	<decorator name="footer" page="layout/footer.jsp"/>
 	
 

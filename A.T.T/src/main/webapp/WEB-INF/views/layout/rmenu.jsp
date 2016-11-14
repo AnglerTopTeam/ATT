@@ -45,67 +45,23 @@
 		                        </b>
 		                    </div>
 		                    <div class="btn-group-vertical" style=" width:100%;">
-		                    	<div>
-				                	<a href="#"><b>전체글보기</b></a>
-				                </div>
-		                    	<div>
-				                	<a href="#" ><b>공지사항</b></a>
-				                </div>
-				                <div style="color:#5eb3dd;">
-				                	게시판
-				                </div>
-			                    	<div style="margin-left: 10%;">
-					                	<a href="#">-가입인사</a>
-					                </div>
-								 	<div style="margin-left: 10%;">
-					                	<a href="#">-자유게시판</a>
-					                </div>
-					            </div>
-							 	<div style="color:#5eb3dd;">
-				                	포인트
-				                </div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-물건구매</a>
-				                	</div>
-				                
-							 	<div style="color:#5eb3dd;">
-				                	조행기
-				                </div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-사진</a>
-				                	</div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-동영상</a>
-				                	</div>
-				                
-								<div style="color:#5eb3dd;">
-				                	업체게시판
-				                </div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-업체홍보</a>
-				                	</div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-공동구매</a>
-				                	</div>
-				                
-				                <div style="color:#5eb3dd;">
-				                	이벤트
-				                </div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-경매</a>
-				                	</div>
-				                	<div style="margin-left: 10%;">
-				                		<a href="#">-행사</a>
-				                	</div>
-				                
-				           		
+		                    	<button type="button" class="btn btn-primary">전체글보기</button>
+		                    	<button type="button" class="btn btn-primary">공지사항</button>
+							 	<button type="button" class="btn btn-primary">가입인사</button>
+							 	<button type="button" class="btn btn-primary">자유게시판</button>
+							 	<button type="button" class="btn btn-primary">포인트</button>
+								<button type="button" class="btn btn-primary">조행기</button>
+								<button type="button" class="btn btn-primary">업체게시판</button>
+								<span class="col-md-offset-2 col-md-2">
+               <i class="fa fa-pencil" aria-hidden="true"></i>
+               <button  type="button" onclick="location.href='boardInsertForm'" class="btn btn-info resultButton"> 글쓰기</button>
+            </span>
+            <li>
+                	<a href="Insert"><i class="fa fa-edit fa-fw"></i> 글쓰기</a>
+                </li>
 								<c:if test="${sessionid == 'admin'}">
-								<div>
-				                	<a href="#">회운목록</a>
-				                </div>
-				                <div>
-				                	<a href="#">업체목록</a>
-				                </div>
+								<button type="button" class="btn btn-primary">회원목록</button>
+								<button type="button" class="btn btn-primary">업체목록</button>
 								</c:if>
 							</div>
                         
