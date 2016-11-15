@@ -17,7 +17,7 @@
 		</resultMap>
 		
 		<select id="selectCount" parameterType="String" resultType="int">
-			select count(*) from member where id=#{id}
+			select count(*) from member where id=#{id}  
 		</select>
 		<select id="sCount" parameterType="String" resultType="int">
 			select count(*) from member where nickname=#{nickname}
