@@ -8,7 +8,9 @@ public class Member {
 		private String name;
 		private String nicname;
 		private String password;
-		private String phone;
+		private String phone1;
+		private String phone2;
+		private String phone3;
 		private String email;
 		private String inputdate;
 		private String job;
@@ -39,11 +41,24 @@ public class Member {
 		public void setPassword(String password) {
 			this.password = password;
 		}
-		public String getPhone() {
-			return phone;
+		
+		public String getPhone1() {
+			return phone1;
 		}
-		public void setPhone(String phone) {
-			this.phone = phone;
+		public void setPhone1(String phone1) {
+			this.phone1 = phone1;
+		}
+		public String getPhone2() {
+			return phone2;
+		}
+		public void setPhone2(String phone2) {
+			this.phone2 = phone2;
+		}
+		public String getPhone3() {
+			return phone3;
+		}
+		public void setPhone3(String phone3) {
+			this.phone3 = phone3;
 		}
 		public String getEmail() {
 			return email;

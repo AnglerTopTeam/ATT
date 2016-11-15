@@ -6,39 +6,39 @@
 <html>
 <head>
 <title>header</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+	<link rel="stylesheet" href="resources/css/common.css" type="text/css" />
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="resources/js/respond.min.js"></script>
+	<script src="resources/js/html5shiv.js"></script>
+	<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+	<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 </head>
 <body >
-        <div class="navbar navbar-default navbar-static-top"  role="navigation" style="margin-bottom: 0; background: #fff">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="main">A.T.T's</a>
-                
-                <div class="dropdown" align="right" style="padding:1%; margin-right:15px">
-				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> 안녕하세요!!! 
-                           <c:choose>
-                              <c:when test="${sessionid != null}">
-                              ${sessionid} 님
-                              </c:when>
-                              <c:otherwise>
-                              Guest(로그인후 사용가능)
-                              </c:otherwise>
-                              </c:choose><i class="fa fa-caret-down"></i>
-                    </a>
-				  
-				  <ul class="dropdown-menu dropdown-menu-right">
-				    <li><a href="#">로그인</a></li>
-				    <li><a href="#">로그웃</a></li>
-				    <li><a href="#">정보수정</a></li>
-				  </ul>
-				 </div>
-				
-				 
-				
-            </div>
-         </div>  
+	<div class="col-md-12">
+		<span class="col-md-2" style="margin-top:0;">
+			<a href="main"><b>A.T.T's</b></a>
+		</span>   
+		<span class="col-md-offset-4 col-md-8"  style="margin-left:50%;text-align: right">    	
+		<c:choose>
+		<c:when test="${sessionid != null}">
+		안녕하세요 ${sessionid} 님
+		등급:${sessionmemberlevel}
+		포인트:${sessionpoint}
+		캐쉬:${sessioncash}
+		<button type="button" class="btn btn-primary btn-xs">정보수정</button>
+		<button type="button" class="btn btn-primary btn-xs">로그아웃</button>
+		</c:when>
+		<c:otherwise>
+		<input class="col-md-offset-2 col-md-2" placeholder="E-mail" name="email" type="email" autofocus
+		data-parsley-error-container="div[id='validateEmail']">
+		<input class="col-md-2" placeholder="Password" name="password" type="password" value="">
+		<button type="submit" class="btn btn-success btn-xs"> 로그인  </button>
+		<button type="button" onclick="location.href='memberInsert'" class="btn btn-warnning btn-xs"> 회원가입 </button>
+		</c:otherwise>
+		</c:choose>
+		
+		</span>
+	</div>
 </body>
 </html>

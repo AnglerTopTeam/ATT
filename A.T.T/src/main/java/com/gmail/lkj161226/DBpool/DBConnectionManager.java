@@ -15,8 +15,8 @@ public class DBConnectionManager {
 	
 	private Vector connections = new Vector(10);
 	private String _driver = "oracle.jdbc.driver.OracleDriver";
-	private String _user = "admin";
-    private String _url = "jdbc:oracle:thin:@localhost:1521:xe";    
+	private String _user = "att";
+    private String _url = "jdbc:oracle:thin:@58.224.18.160:1521:xe";    
     private String _password = "1234";
     
     private boolean _traceOn = false;
