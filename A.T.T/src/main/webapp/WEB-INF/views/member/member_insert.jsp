@@ -29,7 +29,7 @@
 		document.insert_form.password.value = "";
 		document.insert_form.repassword.value = "";
 		document.insert_form.name.value = "";
-		document.insert_form.nicname.value = "";
+		document.insert_form.nickname.value = "";
 		document.insert_form.phone.value = "";
 		document.insert_form.email.value = "";
 		document.insert_form.job.value = "";
@@ -70,14 +70,14 @@
 			});
 		});
 		$('#nicconfirm').click(function(){
-			var nicname = $('#nicname').val();
-			if( nicname == "") {
+			var nickname = $('#nickname').val();
+			if( nickname == "") {
 				alert("닉네임을 입력하세요!");
 				return;
 			}
 			$.ajax({
 				type : 'POST',
-				data : "nicname="+ nicname,
+				data : "nickname="+ nickname,
 				dataType : 'json',
 				url : 'nicconfirm',
 				success : function(data) {
@@ -96,7 +96,7 @@
 </script>
 
 <body class="div-bgcolor-gray" onload="doReset();">
-<form id="i_form" name="i_form"  class="form-horizontal" enctype="multipart/form-data" action="mInsert" method="POST" role="form" data-parsley-validate="true">
+<form id="i_form" name="i_form"  class="form-horizontal" enctype="multipart/form-data" action="memberInsert" method="POST" role="form" data-parsley-validate="true">
 	<div class="contatiner">
 	  <span class="text-success text-center"><h1>회원가입 </h1></span>
 	  <br><br>
@@ -137,8 +137,8 @@
 				<div id="validateName" style="color:#ff0000"></div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-					<input id="nicname" name="nicname" class="form-control" type="text" size="16" placeholder="닉네임" autocomplete="off"
-					required="" data-parsley-error-message="닉네임을 입력하세요" data-parsley-errors-container="div[id='validateNicname']" />
+					<input id="nickname" name="nickname" class="form-control" type="text" size="16" placeholder="닉네임" autocomplete="off"
+					required="" data-parsley-error-message="닉네임을 입력하세요" data-parsley-errors-container="div[id='validatenickname']" />
 					<span class="input-group-btn">
 						<button id="nicconfirm" type="button" class="btn btn-primary" >중복체크</button>
 						<input id="nicconfirm_check" type="hidden" value="no"/>
@@ -179,7 +179,7 @@
 				</div>
 				<br>
 				<div align="center">
-					<button id="save" name="save" type="button" class="btn btn-success">가입하기</button>
+					<button id="save" name="save" type="submit" class="btn btn-success">가입하기</button>
 					<span>&nbsp;&nbsp;</span>
 					<span>&nbsp;&nbsp;</span>
 					<button type="reset" name="reset" class="btn btn-default" >다시하기</button>

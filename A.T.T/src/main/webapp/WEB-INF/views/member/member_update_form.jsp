@@ -28,7 +28,7 @@
 </script>
 
 <body class="div-bgcolor-gray" onload="doReset();">
-<form id="u_form" name="u_form"  class="form-horizontal" enctype="multipart/form-data" action="mUpdate" method="POST" role="form" data-parsley-validate="true">
+<form id="u_form" name="u_form"  class="form-horizontal" enctype="multipart/form-data" action="memberUpdate" method="POST" role="form" data-parsley-validate="true">
 	<div class="contatiner">
 	  <span class="text-success text-center"><h1>정보수정 </h1></span>
 	  <br><br>
@@ -61,7 +61,7 @@
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
-					<input name="nicname" class="form-control" type="text" value="${member.getNicname()}" size="20" readonly="readonly"/>
+					<input name="nickname" class="form-control" type="text" value="${member.getNickname()}" size="20" readonly="readonly"/>
 				</div>
 			</div>
 			
@@ -73,18 +73,18 @@
          <div class="col-md-4">
             <div class="input-group" >
                <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                  <span class="input-group-addon"> <select name="phone1">
-                           <option value="010" <c:if test="${member.phone1=='010'}">selected</c:if>>010</option>
-                           <option value="011" <c:if test="${member.phone1=='011'}">selected</c:if>>011</option>
-                           <option value="016" <c:if test="${member.phone1=='016'}">selected</c:if>>016</option>
-                           <option value="017" <c:if test="${member.phone1=='017'}">selected</c:if>>017</option>
-                           <option value="018" <c:if test="${member.phone1=='018'}">selected</c:if>>018</option>
-                           <option value="019" <c:if test="${member.phone1=='019'}">selected</c:if>>019</option>
+                  <span class="input-group-addon"> <select name="phone">
+                           <option value="010" <c:if test="${member.phone=='010'}">selected</c:if>>010</option>
+                           <option value="011" <c:if test="${member.phone=='011'}">selected</c:if>>011</option>
+                           <option value="016" <c:if test="${member.phone=='016'}">selected</c:if>>016</option>
+                           <option value="017" <c:if test="${member.phone=='017'}">selected</c:if>>017</option>
+                           <option value="018" <c:if test="${member.phone=='018'}">selected</c:if>>018</option>
+                           <option value="019" <c:if test="${member.phone=='019'}">selected</c:if>>019</option>
                         </select></span>
-               <span class="input-group-addon">-</span>
-               <input name="phone2" class="form-control" type="text" value="${member.getPhone2()}" size="4" placeholder="Phone" />
-               <span class="input-group-addon">-</span>
-               <input name="phone3" class="form-control" type="text" value="${member.getPhone3()}" size="4" placeholder="Number"/>
+<!--                <span class="input-group-addon">-</span> -->
+<%--                <input name="phone2" class="form-control" type="text" value="${member.getPhone2()}" size="4" placeholder="Phone" /> --%>
+<!--                <span class="input-group-addon">-</span> -->
+<%--                <input name="phone3" class="form-control" type="text" value="${member.getPhone3()}" size="4" placeholder="Number"/> --%>
                </div>
 				<br>
 				
@@ -94,10 +94,10 @@
 					
 				</div>
 				<br>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-					<input name="job" class="form-control" type="text" size="30" placeholder="JOB" autocomplete="off"/>
-				</div>
+<!-- 				<div class="input-group"> -->
+<!-- 					<span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span> -->
+<!-- 					<input name="job" class="form-control" type="text" size="30" placeholder="JOB" autocomplete="off"/> -->
+<!-- 				</div> -->
 				<br>
 				<div align="center">
 					<button id="update" name="update" type="button" class="btn btn-success">정보수정</button>

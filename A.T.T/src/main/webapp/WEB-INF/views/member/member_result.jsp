@@ -22,7 +22,7 @@
 
 
 <body>
-<form action="" method="GET">
+<form action="main" method="GET">
 	<div class="contatiner" align="center">
 		<div class="row">
 			<div class="col-md-4"><span></span></div>

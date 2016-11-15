@@ -34,7 +34,7 @@
 		data-parsley-error-container="div[id='validateEmail']">
 		<input class="col-md-2" placeholder="Password" name="password" type="password" value="">
 		<button type="submit" class="btn btn-success btn-xs"> 로그인  </button>
-		<button type="button" onclick="location.href='memberInsert'" class="btn btn-warnning btn-xs"> 회원가입 </button>
+		<button type="button" onclick="location.href='memberInsertForm'" class="btn btn-warnning btn-xs"> 회원가입 </button>
 		</c:otherwise>
 		</c:choose>
 		

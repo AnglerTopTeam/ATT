@@ -4,26 +4,23 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	<mapper namespace="com.gmail.lkj161226.service.MemberDao">
 		<resultMap type="com.gmail.lkj161226.entities.Member" id="memberMap">
-			<id property="id" column="id" />
-			<id property="name" column="name" />
-			<id property="nicname" column="nicname" />
-			<id property="password" column="password" />
-			<id property="phone1" column="phone1" />
-			<id property="phone2" column="phone2" />
-			<id property="phone3" column="phone3" />
-			<id property="email" column="email" />
-			<id property="inputdate" column="inputdate" />
-			<id property="job" column="job" />
-			<id property="memberlevel" column="memberlevel" />
-			<id property="point" column="point" />
-			<id property="cash" column="cash" />
+			<id property="id" 			column="id" />
+			<id property="name" 		column="name" />
+			<id property="nickname" 	column="nickname" />
+			<id property="password" 	column="password" />
+			<id property="phone" 		column="phone" />
+			<id property="email" 		column="email" />
+			<id property="inputdate" 	column="inputdate" />
+			<id property="memberlevel" 	column="memberlevel" />
+			<id property="point" 		column="point" />
+			<id property="cash" 		column="cash" />
 		</resultMap>
 		
 		<select id="selectCount" parameterType="String" resultType="int">
 			select count(*) from member where id=#{id}
 		</select>
 		<select id="sCount" parameterType="String" resultType="int">
-			select count(*) from member where nicname=#{nicname}
+			select count(*) from member where nickname=#{nickname}
 		</select>
 		
 		<select id="selectOne" parameterType="String" resultMap="memberMap">
@@ -35,14 +32,17 @@
 		</select>
 		
 		<insert id="insertRow" parameterType="hashMap">
-			insert into member (id,name,nicname,password,phone1,phone2,phone3,email,inputdate,job,memberlevel,point,cash)	
-			values (#{id},#{name},#{nicname},#{password},#{phone},#{email},#{inputdate},#{job},
-			#{memberlevel},#{point},#{cash})
+			insert into member (id,name,nickname,password,phone,email,inputdate,memberlevel,point,cash)	
+			values (#{id,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{nickname,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},
+			#{phone,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},#{inputdate,jdbcType=VARCHAR},
+			#{memberlevel,jdbcType=INTEGER},#{point,jdbcType=INTEGER},#{cash,jdbcType=INTEGER})
 		</insert>
 		
 		<update id="updateRow" parameterType="hashMap">
-			update member set name=#{name},nicname=#{nicname},password=#{password},phone1=#{phone1},phone2=#{phone2},phone3=#{phone3},
-			 email=#{email},inputdate=#{inputdate},job=#{job},memberlevel=#{memberlevel},point=#{point},cash=#{cash}
+			update member set name=#{name,jdbcType=VARCHAR},nickname=#{nickname,jdbcType=VARCHAR},
+			password=#{password,jdbcType=VARCHAR},phone=#{phone,jdbcType=VARCHAR},
+			email=#{email,jdbcType=VARCHAR},inputdate=#{inputdate,jdbcType=VARCHAR},
+			memberlevel=#{memberlevel,jdbcType=INTEGER},point=#{point,jdbcType=INTEGER},cash=#{cash,jdbcType=INTEGER}
 			where id=#{id}
 		</update>
 		
@@ -52,7 +52,7 @@
 		</delete>
 		
 		<select id="selectLogin" parameterType="hashMap" resultMap="memberMap">
-			select * from member where email=#{email} and password=#{password}
+			select * from member where email=#{email,jdbcType=VARCHAR} and password=#{password,jdbcType=VARCHAR}
 		</select>
 		
 	</mapper>

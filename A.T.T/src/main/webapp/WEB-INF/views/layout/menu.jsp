@@ -32,6 +32,9 @@
 				                <div style="color:#2770bc;">
 				                	<b>게시판</b>
 				                </div>
+				                	<div style="margin-left: 10%;">
+					                	<a href="memberList">-회원목록테스트-</a>
+					                </div>
 			                    	<div style="margin-left: 10%;">
 					                	<a href="#">-가입인사</a>
 					                </div>

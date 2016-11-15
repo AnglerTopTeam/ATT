@@ -65,8 +65,8 @@
             <tr>
                 <td><a href="mUpdateForm?id=${member.id}">${member.id}</a></td>
                 <td>${member.name}</td>
-                <td>${member.nicname}</td>
-                <td>${member.phone1}-${member.phone2}-${member.phone3}</td>
+                <td>${member.nickname}</td>
+                <td>${member.phone}</td>
                 <td>${member.email}</td>
                 <td style="text-align: center !important;"><input type="checkbox" id="unitchk" name="unitchk" value="${member.id}" ></td>
             </tr>
