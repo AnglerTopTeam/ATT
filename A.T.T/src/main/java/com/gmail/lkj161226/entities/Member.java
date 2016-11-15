@@ -15,10 +15,6 @@ public class Member {
 		private int point;
 		private int cash;
 		
-		
-		
-		
-		
 		public String getPhone() {
 			return phone;
 		}

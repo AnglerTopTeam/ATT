@@ -7,7 +7,7 @@ import com.gmail.lkj161226.entities.Member;
 
 public interface MemberDao {
 	public int selectCount( String id );
-	public int sCount( String nicname );
+	public int sCount( String nickname );
 	public Member selectOne( String id );
 	public int insertRow(Member member);
 	public ArrayList<Member> selectAll();

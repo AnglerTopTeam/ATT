@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gmail.lkj161226.entities.Member;
@@ -127,14 +129,68 @@ import com.gmail.lkj161226.service.MemberDao;
 			mav.addObject("members",members);
 			return mav;
 		}
+		@RequestMapping(value = "/idconfirm", method = RequestMethod.POST)
+		@ResponseBody
+		public int idconfirm(@RequestParam String id ) {
+			int count = 0;
+			int find = 0;
+			try {
+				MemberDao dao = sqlSession.getMapper(MemberDao.class); 
+				count = dao.selectCount(id); 
+			} catch (Exception e) {
+			}
+			if ( count > 0){
+				find = 1;
+			} else {
+				find = 0;
+			}
+			return find;
+		}
+		@RequestMapping(value = "/nickconfirm", method = RequestMethod.POST)
+		@ResponseBody
+		public int nickconfirm(@RequestParam String nicname ) {
+			int count = 0;
+			int find = 0;
+			try {
+				MemberDao dao = sqlSession.getMapper(MemberDao.class);  
+				count = dao.sCount(nicname); 
+			} catch (Exception e) {
+			}
+			if ( count > 0){
+				find = 1;
+			} else {
+				find = 0;
+			}
+			return find;
+		}
 		
-		@RequestMapping(value = "/Select", method = RequestMethod.GET)
-		public String Select(Locale locale, Model model) {
-			return "member/select_member";
-		}
-		@RequestMapping(value = "/login", method = RequestMethod.GET)
-		public String login(Locale locale, Model model) {
-			return "login/login";
-		}
+		@RequestMapping(value = "/loginup", method = RequestMethod.POST)
+	      public String loginup(@ModelAttribute("member") Member member, HttpSession session) {
+	         MemberDao dao = sqlSession.getMapper(MemberDao.class);
+	         Member data = dao.selectLogin(member);
+	         if ( data == null ) {
+	            return "redirect:/loginfail";
+	         }else {
+	            session.setAttribute("sessionid", data.getId());
+	            session.setAttribute("sessionpassword", data.getPassword());
+	            session.setAttribute("sessionname", data.getName());
+	            session.setAttribute("sessionnickname", data.getNickname());
+	            session.setAttribute("sessionemail", data.getEmail());
+	            return "redirect:/index"; 
+	         }
+	         
+	      }
+	      
+	      @RequestMapping(value = "/loginfail", method = RequestMethod.GET)
+	      public String loginfail(HttpServletRequest request) {
+	         return "login/login_fail";
+	      }
+	      
+	      @RequestMapping(value = "/logout", method = RequestMethod.GET)
+	      public String logout(HttpServletRequest request) {
+	         HttpSession session=request.getSession();
+	         session.invalidate();
+	         return "redirect:/main";
+	      }
 		
 	}

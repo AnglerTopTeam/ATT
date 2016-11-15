@@ -26,15 +26,17 @@
 		등급:${sessionmemberlevel}
 		포인트:${sessionpoint}
 		캐쉬:${sessioncash}
-		<button type="button" class="btn btn-primary btn-xs">정보수정</button>
-		<button type="button" class="btn btn-primary btn-xs">로그아웃</button>
+		<button type="button" class="btn btn-primary btn-xs" onclick="location.href='memberUpdateForm'" >정보수정</button>
+		<button type="button" class="btn btn-primary btn-xs" onclick="location.href='logout'" >로그아웃</button>
 		</c:when>
 		<c:otherwise>
+		<form id="login-form" name="login-form" class="form-horizontal" action="loginup" Method="POST">
 		<input class="col-md-offset-2 col-md-2" placeholder="E-mail" name="email" type="email" autofocus
 		data-parsley-error-container="div[id='validateEmail']">
 		<input class="col-md-2" placeholder="Password" name="password" type="password" value="">
 		<button type="submit" class="btn btn-success btn-xs"> 로그인  </button>
 		<button type="button" onclick="location.href='memberInsertForm'" class="btn btn-warnning btn-xs"> 회원가입 </button>
+		</form>
 		</c:otherwise>
 		</c:choose>
 		

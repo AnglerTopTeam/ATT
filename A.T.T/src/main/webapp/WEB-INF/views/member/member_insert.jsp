@@ -34,65 +34,14 @@
 		document.insert_form.email.value = "";
 		document.insert_form.job.value = "";
 	}
-	$(document).ready(function() {
-		$('#save').click(function(){
-			if($('#confirm_check').val()=='id'){
-				alert("ID중복 체크하세요");
-				return;
-			}
-			$('#i_form').submit();
-		});
+	
+		
 		$(document).ready(function(){
 			$("#ulphone1 li").click(function(){
 				$('#phone1').attr('value',$(this).text());
 			});
 		});
-		$('#confirm').click(function(){
-			var id = $('#id').val();
-			if( id == "") {
-				alert("ID를 입력하세요!");
-				return;
-			}
-			$.ajax({
-				type : 'POST',
-				data : "id="+ id,
-				dataType : 'json',
-				url : 'idconfirm',
-				success : function(data) {
-					if(data==0){
-						alert("사용가능한 ID입니다");
-						$('#confirm_check').attr('value','yes');
-					} else {
-						alert("중복된 ID입니다");
-					}
-					return false;
-				}
-			});
-		});
-		$('#nicconfirm').click(function(){
-			var nickname = $('#nickname').val();
-			if( nickname == "") {
-				alert("닉네임을 입력하세요!");
-				return;
-			}
-			$.ajax({
-				type : 'POST',
-				data : "nickname="+ nickname,
-				dataType : 'json',
-				url : 'nicconfirm',
-				success : function(data) {
-					if(data==0){
-						alert("사용가능한 닉네임입니다");
-						$('#nicconfirm_check').attr('value','yes');
-					} else {
-						alert("사용할수 없는 닉네임입니다.");
-					}
-					return false;
-				}
-			});
-		});
-		
-	});
+	
 </script>
 
 <body class="div-bgcolor-gray" onload="doReset();">
@@ -109,6 +58,30 @@
 					required="" data-parsley-error-message="아이디를 입력하세요" data-parsley-errors-container="div[id='validateId']" />
 					<span class="input-group-btn">
 						<button id="confirm" type="button" class="btn btn-primary" >Confirm</button>
+						<script type="text/javascript">
+							$('#confirm').click(function(){
+								var id = $('#id').val();
+								if( id == "") {
+									alert("ID를 입력하세요!");
+									return;
+								}
+								$.ajax({
+									type : 'POST',
+									data : "id="+ id,
+									dataType : 'json',
+									url : 'idconfirm',
+									success : function(data) {
+										if(data==0){
+											alert("사용가능한 ID입니다");
+											$('#confirm_check').attr('value','yes');
+										} else {
+											alert("중복된 ID입니다");
+										}
+										return false;
+									}
+								});
+							});
+						</script>
 						<input id="confirm_check" type="hidden" value="no"/>
 					</span>
 				</div>
@@ -140,8 +113,32 @@
 					<input id="nickname" name="nickname" class="form-control" type="text" size="16" placeholder="닉네임" autocomplete="off"
 					required="" data-parsley-error-message="닉네임을 입력하세요" data-parsley-errors-container="div[id='validatenickname']" />
 					<span class="input-group-btn">
-						<button id="nicconfirm" type="button" class="btn btn-primary" >중복체크</button>
-						<input id="nicconfirm_check" type="hidden" value="no"/>
+						<button id="nickconfirm" type="button" class="btn btn-primary" >중복체크</button>
+						<script type="text/javascript">
+							$('#nickconfirm').click(function(){
+								var nickname = $('#nickname').val();
+								if( nickname == "") {
+									alert("닉네임을 입력하세요!");
+									return;
+								}
+								$.ajax({
+									type : 'POST',
+									data : "nickname="+ nickname,
+									dataType : 'json',
+									url : 'nickconfirm',
+									success : function(data) {
+										if(data==0){
+											alert("사용가능한 닉네임입니다");
+											$('#nickconfirm_check').attr('value','yes');
+										} else {
+											alert("사용할수 없는(중복) 닉네임입니다.");
+										}
+										return false;
+									}
+								});
+							});
+						</script>
+						<input id="nickconfirm_check" type="hidden" value="no"/>
 					</span>
 				</div>
 			</div>
@@ -180,6 +177,19 @@
 				<br>
 				<div align="center">
 					<button id="save" name="save" type="submit" class="btn btn-success">가입하기</button>
+					<script type="text/javascript">
+						$('#save').click(function(){
+							if($('#confirm_check').val()=='id'){
+								alert("ID중복 체크하세요");
+								return;
+							}
+							if($('#nickconfirm_check').val()=='id'){
+								alert("닉네임중복 체크하세요");
+								return;
+							}
+							$('#i_form').submit();
+						});
+					</script>
 					<span>&nbsp;&nbsp;</span>
 					<span>&nbsp;&nbsp;</span>
 					<button type="reset" name="reset" class="btn btn-default" >다시하기</button>
