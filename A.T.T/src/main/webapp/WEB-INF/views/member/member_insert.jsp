@@ -32,16 +32,8 @@
 		document.insert_form.nickname.value = "";
 		document.insert_form.phone.value = "";
 		document.insert_form.email.value = "";
-		document.insert_form.job.value = "";
-	}
-	
 		
-		$(document).ready(function(){
-			$("#ulphone1 li").click(function(){
-				$('#phone1').attr('value',$(this).text());
-			});
-		});
-	
+	}
 </script>
 
 <body class="div-bgcolor-gray" onload="doReset();">
@@ -149,30 +141,13 @@
          <div class="col-md-4">
             <div class="input-group" >
                <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                  <span class="input-group-addon"> 
-                  	<select name="phone1">
-                           <option value="010" selected="selected">010</option>
-                           <option value="011">011</option>
-                           <option value="016">016</option>
-                           <option value="017">017</option>
-                           <option value="018">018</option>
-                           <option value="019">019</option>
-                     </select></span>
-               <span class="input-group-addon">-</span>
-               <input name="phone2" class="form-control" type="text" value="${member.getPhone2()}" size="4" placeholder="Phone" />
-               <span class="input-group-addon">-</span>
-               <input name="phone3" class="form-control" type="text" value="${member.getPhone3()}" size="4" placeholder="Number"/>
+               <input name="phone" class="form-control" type="text" value="${member.getPhone()}" placeholder="기호뺀 숫자만"/>
                </div>
 				<br>
 				
 				<div class="input-group" >
 					<span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
 					<input name="email" class="form-control" text="text" size="30" placeholder="E-MAIL" autocomplete="off"/>
-				</div>
-				<br>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-					<input name="job" class="form-control" type="text" size="30" placeholder="JOB" autocomplete="off"/>
 				</div>
 				<br>
 				<div align="center">
@@ -183,11 +158,12 @@
 								alert("ID중복 체크하세요");
 								return;
 							}
-							if($('#nickconfirm_check').val()=='id'){
+							if($('#nickconfirm_check').val()=='nickname'){
 								alert("닉네임중복 체크하세요");
 								return;
-							}
+							}else{
 							$('#i_form').submit();
+							}
 						});
 					</script>
 					<span>&nbsp;&nbsp;</span>

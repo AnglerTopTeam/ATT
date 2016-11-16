@@ -148,12 +148,12 @@ import com.gmail.lkj161226.service.MemberDao;
 		}
 		@RequestMapping(value = "/nickconfirm", method = RequestMethod.POST)
 		@ResponseBody
-		public int nickconfirm(@RequestParam String nicname ) {
+		public int nicconfirm(@RequestParam String nickname ) {
 			int count = 0;
 			int find = 0;
 			try {
 				MemberDao dao = sqlSession.getMapper(MemberDao.class);  
-				count = dao.sCount(nicname); 
+				count = dao.sCount(nickname); 
 			} catch (Exception e) {
 			}
 			if ( count > 0){
